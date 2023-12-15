@@ -1,6 +1,8 @@
 # Simple Fetch API Interceptor
 
-Allows to add multiple Interceptors for both Request & Response when using the native fetch api in the browser and NodeJs.
+Native Fetch API doesn't facilitate Interceptors and calling relative urls.
+
+This library allows to add multiple Interceptors for both Request & Response when using the native fetch api in the browser and NodeJs and facilitates to call relative urls after specifying `baseUrl` in its settings.
 
 <!-- Although you should avoid adding too many interceptors as it may delay you request triggering; as each interceptor depends and works upon the awaited result of its previous Interceptor.
 So if thats what and how your application requests needs to be processed then use it that way.
@@ -8,7 +10,7 @@ Thats how Interceptors must work. -->
 
 You may though combine code of multiple interceptors into one function and just add that one.
 
-There is an Example using all the features in the repo.
+There is an example using all the features in the repo.
 
 
 ## 📄 Installation
@@ -121,7 +123,7 @@ Each Request Interceptor gets these parameters and must return them in a Promise
 <br/>
 
 ### 📄 Response Interceptors
-Each Response Interceptor gets `data`, `response` & request `config` and msut return `data` in a Promise.
+Each Response Interceptor gets `data`, `response` & request `config` and must return `data` in a Promise.
 
 | Prop | Description |
 | ---- | ----------- |
@@ -171,16 +173,16 @@ console.log(http.interceptors.response.get())
 | ------- | ----------- |
 | config  | Getter and Setter for the default request config
 | settings| Getter and Setter for default options for this library. <br/> <strong>These can also be set separately for individual requests.</strong>
-|         |  - `responseType` <`'json'`, `'text'`, `'blob'`>: The response data return format. **Default is `'json'`** 
-|         | - `debug` <boolean> : When true will log output to console.
-|         | - `baseUrl` <string> : Base Url to be prefixed to all requests.
-|         | - `prefixBaseUrl` <boolean> : When true will automatically set the base url to all requests which has a relative url. <br/>If the `baseUrl` is not set, current location's origin will be used as base url.
+|         |  - `responseType` `<string: 'json' \| 'text' \| 'blob'>`: The response data return format. **Default is `'json'`** 
+|         | - `debug` `<boolean>` : When true will log output to console.
+|         | - `baseUrl` `<string>` : Base Url to be prefixed to all requests.
+|         | - `prefixBaseUrl` `<boolean>` : When true will automatically set the base url to all requests which has a relative url. <br/>If the `baseUrl` is not set, current location's origin will be used as base url.
 
 
 
 ```ts
 
-// See the list of default request config and settings.
+// get the list of default request config and settings.
 console.log(http.config);
 console.log(http.settings);
 
@@ -191,13 +193,13 @@ console.log(http.settings);
 
 ```ts
 
-// set default request config to be used by all requests
+// set the default request config to be used by all requests
 http.config = {
     authorization: 'Bearer uYXV0aDAuY29tLyIsImF1ZCI6Imh0dHB',
     // ...
 }
 
-// set default response data format to return by all requests
+// set the default base url and response data format to return by all requests
 http.settings = {
     responseType: 'blob',
     debug: true,
