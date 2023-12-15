@@ -169,14 +169,14 @@ console.log(http.interceptors.response.get())
 
 ### 📄 Default Options
 
-| Methods | Description |
-| ------- | ----------- |
-| config  | Getter and Setter for the default request config
-| settings| Getter and Setter for default options for this library. <br/> <strong>These can also be set separately for individual requests.</strong>
-|         |  - `responseType` `<string: 'json' \| 'text' \| 'blob'>`: The response data return format. **Default is `'json'`** 
-|         | - `debug` `<boolean>` : When true will log output to console.
-|         | - `baseUrl` `<string>` : Base Url to be prefixed to all requests.
-|         | - `prefixBaseUrl` `<boolean>` : When true will automatically set the base url to all requests which has a relative url. <br/>If the `baseUrl` is not set, current location's origin will be used as base url.
+| Prop | | Description |
+| ------- |--- |----------- |
+| config  | |Getter and Setter for the default request config
+| settings| |Getter and Setter for default options for this library. <br/> <strong>These can also be set separately for individual requests.</strong>
+|         | `responseType` <br/>`<'json' \| 'text' \| 'blob'>` | The response data return format. **Default is `'json'`** 
+|         | `debug` `<boolean>` | When true will log output to console.
+|         | `baseUrl` `<string>` | Base Url to be prefixed to all requests.
+|         | `prefixBaseUrl` `<boolean>` | When true will automatically set the base url to all requests which has a relative url. <br/>If the `baseUrl` is not set, current location's origin will be used as base url.
 
 
 
