@@ -1,10 +1,14 @@
 {
-	"name": "@anupamtest/fetch-api-interceptor",
-	"version": "0.5.14",
+	"name": "@simbeto/fetch-api-interceptor",
+	"version": "1.0.0",
 	"license": "MIT",
 	"author": {
 		"name": "Anupam Soni",
 		"email": "simbetosol@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/simbeto/fetch-api-interceptor.git"
 	},
 	"keywords": [
 		"fetch api",
