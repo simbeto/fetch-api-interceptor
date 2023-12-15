@@ -16,11 +16,11 @@ There is an example using all the features in the repo.
 ## 📄 Installation
 
 ```
-npm i @anupamtest/fetch-api-interceptor
+npm i @simbeto/fetch-api-interceptor
 or
-pnpm i @anupamtest/fetch-api-interceptor
+pnpm i @simbeto/fetch-api-interceptor
 or
-yarn add @anupamtest/fetch-api-interceptor
+yarn add @simbeto/fetch-api-interceptor
 ```
 
 <br/>
@@ -39,7 +39,7 @@ yarn add @anupamtest/fetch-api-interceptor
 🟡 Write the code of adding the Interceptors in some script in your application which is called only once.
 
 ```ts
-import http from '@anupamtest/fetch-api-interceptor'
+import http from '@simbeto/fetch-api-interceptor'
 
 http.interceptors.request.add(yourRequestInterceptor_Function)
 http.interceptors.response.add(yourResponseInterceptor_Function)
@@ -52,7 +52,7 @@ http.interceptors.response.add(yourResponseInterceptor_Function)
 ```ts
 
 // app-init.ts
-import http from '@anupamtest/fetch-api-interceptor'
+import http from '@simbeto/fetch-api-interceptor'
 import requestInterceptor_DummyJson from './my-interceptors.ts'
 
 http.interceptors.request.add(requestInterceptor_DummyJson)
