@@ -1,0 +1,69 @@
+{
+	"name": "@anupamtest/fetch-api-interceptor",
+	"version": "0.5.14",
+	"license": "MIT",
+	"author": {
+		"name": "Anupam Soni",
+		"email": "simbetosol@gmail.com"
+	},
+	"keywords": [
+		"fetch api",
+		"fetch-api",
+		"interceptor",
+		"axios alternate",
+		"request interceptor",
+		"response interceptor",
+		"fetch api interceptor",
+		"fetch request interceptor",
+		"fetch response interceptor"
+	],
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"prepublishOnly": "npm version patch && npm run package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"uncomment": "node ./src/uncomment.js"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*",
+		"!dist/examples/*"
+	],
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.1.1",
+		"@sveltejs/kit": "^1.27.6",
+		"@sveltejs/package": "^2.2.3",
+		"@types/node": "^20.10.3",
+		"@types/strip-comments": "^2.0.4",
+		"@typescript-eslint/eslint-plugin": "^6.13.1",
+		"@typescript-eslint/parser": "^6.13.1",
+		"eslint": "^8.55.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.35.1",
+		"prettier": "^3.1.0",
+		"prettier-plugin-svelte": "^3.1.2",
+		"publint": "^0.1.16",
+		"strip-comments": "^2.0.1",
+		"svelte": "^4.2.8",
+		"svelte-check": "^3.6.2",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.2",
+		"vite": "^5.0.4"
+	},
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module"
+}
